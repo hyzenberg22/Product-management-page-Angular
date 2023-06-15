@@ -6,6 +6,6 @@ import { Component } from '@angular/core';
 })
 
 export class ProductListCoomponent{
-
+  pageTitle : string = 'My Product List';
 
 }
