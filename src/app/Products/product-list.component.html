@@ -18,7 +18,11 @@
         <thead>
           <tr>
             <th>
-              <button class="btn btn-primary"> Show Image</button>
+              <!-- call the event listner toggleImage -->
+              <button class="btn btn-primary" (click)="toggleImage()">
+                <!-- Using the interpolation to show/hide functionality  -->
+                {{showImage ? "Hide" : "Show"}} Image
+              </button>
             </th>
             <th>Product</th>
             <th>Code</th>
@@ -31,10 +35,12 @@
         <tbody>
           <tr *ngFor="let product of products">
             <td>
-              <img [src]="product.imageUrl"
-              [title]="product.productName"
-              [style.width.px]="imageWidth"
-              [style.margin.px]="imageMargin">
+              <!-- if the showImage is true then the toggle will active -->
+              <img *ngIf="showImage"
+                  [src]="product.imageUrl"
+                  [title]="product.productName"
+                  [style.width.px]="imageWidth"
+                  [style.margin.px]="imageMargin">
             </td>
             <td>{{product.productName}}</td>
             <td>{{product.productCode}}</td>

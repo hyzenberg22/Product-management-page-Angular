@@ -10,6 +10,9 @@ export class ProductListCoomponent{
   // set the images height and width
   imageWidth : number = 50;
   imageMargin : number = 2;
+
+  //Set the Event listners inside the show image button
+  showImage : boolean = false;
   products : any[]= [
     {
       "productId": 1,
@@ -62,4 +65,9 @@ export class ProductListCoomponent{
       "imageUrl": "assets/images/xbox-controller.png"
     }
   ];
+
+  //Event listner Methode
+  toggleImage(): void {
+    this.showImage = !this.showImage;
+  }
 }
