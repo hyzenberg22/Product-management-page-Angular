@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Iproduct } from './product';
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html'
@@ -16,7 +17,10 @@ export class ProductListCoomponent{
 
   //Set the filerby poperty
   listFilter: string ="cart";
-  products : any[]= [
+
+
+  //use the interface from the Iproduct using the strong typing
+  products : Iproduct[]= [
     {
       "productId": 1,
       "productName": "Leaf Rake",
