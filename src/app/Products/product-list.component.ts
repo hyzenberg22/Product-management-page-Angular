@@ -13,6 +13,9 @@ export class ProductListCoomponent{
 
   //Set the Event listners inside the show image button
   showImage : boolean = false;
+
+  //Set the filerby poperty
+  listFilter: string ="cart";
   products : any[]= [
     {
       "productId": 1,
