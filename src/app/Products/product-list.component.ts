@@ -2,11 +2,14 @@ import { Component } from '@angular/core';
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html'
-
 })
 
 export class ProductListCoomponent{
+  //Ts can automatically determine the type of the variable on is's own
   pageTitle : string = 'My Product List';
+  // set the images height and width
+  imageWidth : number = 50;
+  imageMargin : number = 2;
   products : any[]= [
     {
       "productId": 1,
