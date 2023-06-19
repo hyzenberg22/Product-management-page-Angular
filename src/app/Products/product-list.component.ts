@@ -1,11 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Iproduct } from './product';
 @Component({
   selector: 'pm-products',
   templateUrl: './product-list.component.html',
   styleUrls: ['./product-list.component.css'],
 })
-export class ProductListCoomponent {
+export class ProductListCoomponent implements OnInit{
   //Ts can automatically determine the type of the variable on is's own
   pageTitle: string = 'My Product List';
   // set the images height and width
@@ -75,5 +75,9 @@ export class ProductListCoomponent {
   //Event listner Methode
   toggleImage(): void {
     this.showImage = !this.showImage;
+  }
+  //onIntit is and interface and consist of one methode whiche we have to implement ngOninit
+  ngOnInit(): void {
+      console.log('in oninit mehtode');
   }
 }
