@@ -15,8 +15,25 @@ export class ProductListCoomponent implements OnInit{
   //Set the Event listners inside the show image button
   showImage: boolean = false;
 
-  //Set the filerby poperty
-  listFilter: string = 'cart';
+  //Set the filerby poperty default value
+  // listFilter: string = 'cart';
+
+  //using getters and setters instead of the th default value setting the private variable
+  private _listFilter: string = '';
+
+
+  //getters
+  get listFilter(): string{
+    return this._listFilter;
+  }
+  //setters
+
+  set listFilter(value: string){
+    this._listFilter = value;
+    console.log("in setter:- ", value);
+  }
+
+
 
   //use the interface from the Iproduct using the strong typing
   products: Iproduct[] = [
@@ -79,5 +96,6 @@ export class ProductListCoomponent implements OnInit{
   //onIntit is and interface and consist of one methode whiche we have to implement ngOninit
   ngOnInit(): void {
       console.log('in oninit mehtode');
+      this.listFilter='cart';
   }
 }
