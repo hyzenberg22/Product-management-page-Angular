@@ -31,10 +31,11 @@ export class ProductListCoomponent implements OnInit{
   set listFilter(value: string){
     this._listFilter = value;
     console.log("in setter:- ", value);
+    this.filteredProducts = this.performFilter(value);
   }
 
-
-
+  // made a property to filter the list of items
+  filteredProducts: Iproduct[]=[];
   //use the interface from the Iproduct using the strong typing
   products: Iproduct[] = [
     {
@@ -88,6 +89,14 @@ export class ProductListCoomponent implements OnInit{
       imageUrl: 'assets/images/xbox-controller.png',
     },
   ];
+
+  //Filter perform methode
+  //take the filterby methode and filter the iproduct list 
+  performFilter(filterby: string): Iproduct[]{
+    filterby = filterby.toLocaleLowerCase();
+    return this.products.filter((product : Iproduct)=>
+    product.productName.toLocaleLowerCase().includes(filterby));
+  }
 
   //Event listner Methode
   toggleImage(): void {

@@ -33,7 +33,7 @@
         </thead>
         <!-- product list -->
         <tbody>
-          <tr *ngFor="let product of products">
+          <tr *ngFor="let product of filteredProducts">
             <td>
               <!-- if the showImage is true then the toggle will active -->
               <img *ngIf="showImage"
