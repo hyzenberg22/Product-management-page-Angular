@@ -1,4 +1,4 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 
 @Component({
@@ -9,7 +9,7 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
 export class StarComponent implements OnChanges{
 
   //star component rating process
-  rating : number = 4;
+  @Input() rating : number = 4;
   cropWidth: number = 75;
 
   //life cycle hook for the star rating process
